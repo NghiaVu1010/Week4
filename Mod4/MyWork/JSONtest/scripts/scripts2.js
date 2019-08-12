@@ -7,32 +7,16 @@
 
 function getUserInfo() {
     let userID = document.getElementById("userID");
-    //let xhr = getXmlHttpObject();
     let xhr = new XMLHttpRequest;
 
     xhr.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
             let json = JSON.parse(this.responseText);
-
-            /*
-            showUserInfo(json);
-            let itemsDiv = document.getElementById("itemsDiv");
-            let text = 
-            "UserID: " + json.userId +
-            "\nID: " + json.id + 
-            "\nTitle: " + json.title +
-            "\nCompleted: " + json.completed;
-            
-            let para = document.createElement("p");
-            let node = document.createTextNode(text);
-            para.appendChild(node);
-            itemsDiv.appendChild(para);
-            */
-
+            //console.log(json);
             insertTableData(json);
         }
     }
-    var url = "https://jsonplaceholder.typicode.com/todos/" + userID.value;
+    var url = "https://jsonplaceholder.typicode.com/users/" + userID.value;
     xhr.open("GET", url, true);
     xhr.send();
 }
@@ -42,16 +26,22 @@ function insertTableData(list) {
     let row = dataBody.insertRow(-1);
 
     let cell1 = row.insertCell(0);
-    cell1.innerHTML = list.userId;
+    cell1.innerHTML = list.id;
 
     let cell2 = row.insertCell(1);
-    cell2.innerHTML = list.id;
+    cell2.innerHTML = list.name;
 
     let cell3 = row.insertCell(2);
-    cell3.innerHTML = list.title;
+    cell3.innerHTML = list.username;
 
     let cell4 = row.insertCell(3);
-    cell4.innerHTML = list.completed;
+    cell4.innerHTML = list.address.city;
+
+    let cell5 = row.insertCell(4);
+    cell5.innerHTML = list.phone;
+        
+    let cell6 = row.insertCell(5);
+    cell6.innerHTML = list.email;
 }
 
 window.onload = function() 
