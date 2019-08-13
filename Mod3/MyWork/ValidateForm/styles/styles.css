@@ -1,0 +1,15 @@
+.ccExpiration {
+    width: 50px;
+}
+
+#sameShip {
+    width: 250px;
+}
+
+#shipDiv {
+    display: none;
+}
+
+#ccMsgDiv {
+    color: #ff0000;
+}
