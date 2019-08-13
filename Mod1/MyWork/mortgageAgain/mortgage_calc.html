@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="shortcut icon" type="image/png" href="img/icon.png"/>
+    <title>Mortgage Calculator</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-success">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        
+      <!-- Links to calculators -->
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Mortgage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="annuity_calc.html">Annuity</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <img class="center my-2" src="img/calculator.jpg" alt="calculator">
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mx-4">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Mortgage Calculator</li>
+      </ol>
+    </nav>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <aside class="col-md-4">
+            <h1>What is a mortgage calculator?</h1>
+            <p>When purchasing a new home, most buyers choose to finance a portion of the purchase 
+                price via the use of a mortgage. Prior to the wide availability of mortgage 
+                calculators, those wishing to understand the financial implications of changes to 
+                the five main variables in a mortgage transaction were forced to use compound 
+                interest rate tables. These tables generally required a working understanding of 
+                compound interest mathematics for proper use. In contrast, mortgage calculators 
+                make answers to questions regarding the impact of changes in mortgage variables 
+                available to everyone.</p>
+          </aside>
+
+          <div class="col-md-4">
+            <h2>Mortgage Calculator</h2>
+
+            <!-- Required input fields -->
+            <form action="#" method="GET">
+              <div class="mx-5">
+                <label for="loanForm">Loan Amount:</label>
+                <input type="text" id="loanForm" name="loanForm" required="required" />
+                
+                <div class="input-group">
+                  <label for="interestRateForm">Interest Rate:</label>
+                  <input type="text" id="interestRateForm" name="interestRateForm" required="required" />
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-percent"></i></span>
+                  </div>
+                </div>
+                
+                <label for="lengthForm">Mortgage Length <small>(in years)</small>:</label>
+                <input type="text" id="lengthForm" name="lengthForm" required="required" />
+              </div>
+              <small id="incorrectNum" class="form-text">One or more of your numbers is incorrect. Please check you have entered a positive number.</small>
+
+              <!-- Calculate button -->
+              <input class="mx-5 mt-3 btn btn-success" id="calcMortgageBtn" type="button" value="Calculate" onclick="calculateMortgagePayment()" />
+
+              <!-- Reset button-->
+              <button type="reset" class="mx-5 mt-3 btn btn-secondary" id="resetBtn">Reset</button>
+  
+              <!-- Disabled monthly payment and total loan cost -->
+              <p class="mt-3 mx-5">Monthly Payments: <input type="text" id="monthlyPayment" disabled/></p>
+              <p class="mt-3 mx-5">Total Loan Cost: <input type="text" id="totalLoan" disabled/></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container">
+      <hr>
+      <p>&copy;Hartcode Academy 2019</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script src="js/mortgage_calc.js"></script>
+  </body>
+</html>
