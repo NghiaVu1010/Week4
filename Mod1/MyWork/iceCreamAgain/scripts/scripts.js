@@ -29,6 +29,7 @@ function calculateTotal() {
     if(whipCream) currTotal += 0.75;
 
     total.val(currTotal.toFixed(2));
+    $("#totalDiv").fadeIn();
 }
 
 $(function() {
@@ -44,7 +45,7 @@ $(function() {
     const priceBtn = $("#priceBtn");
     $("#priceBtn").on("click", function() {
         calculateTotal();
-        $("#totalDiv").fadeIn();
+        //$("#totalDiv").fadeIn();
     });
 
     let max = Number($("#charCount").text());
