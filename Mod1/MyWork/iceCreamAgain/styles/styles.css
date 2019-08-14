@@ -1,0 +1,11 @@
+#scoopForm {
+    width: 140px;
+}
+
+#errorMsg {
+    color: red;
+}
+
+#totalDiv {
+    display: none;
+}
