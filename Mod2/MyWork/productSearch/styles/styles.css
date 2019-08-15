@@ -1,0 +1,11 @@
+th {
+    width: 150px;
+}
+
+#productDDL {
+    width: 200px;
+}
+
+.visible {
+    display: none;
+}
